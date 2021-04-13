@@ -10,7 +10,6 @@
  * @author Robert Gilanyi
  */
 
-package demonstrations.Lesson11.edu.frontrange.csc161.a11;
 
 public interface MyOrderedMap<K extends Comparable<K>, V> {
   /** Remove all of the entries from this map */ 

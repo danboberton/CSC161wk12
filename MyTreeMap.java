@@ -6,7 +6,6 @@
 * @author Robert Gilanyi
 */
 
-package demonstrations.Lesson11.edu.frontrange.csc161.a11;
 import java.util.Iterator;
 
 public class MyTreeMap<K extends Comparable<K>,V> implements MyOrderedMap<K, V>{
@@ -106,44 +105,122 @@ public class MyTreeMap<K extends Comparable<K>,V> implements MyOrderedMap<K, V>{
 // interface MyOrderedMap methods for Ordered Maps    
     @Override
     public Entry<K,V> firstEntry(){
-        //Left as an exercise
-        if(true) throw new UnsupportedOperationException("unimplemented method ");
-        return new MyOrderedMap.Entry<K,V>(null,null);
+
+      Entry<K, V> first = null;
+
+      try{
+
+        // Iterator finds first inorder traversal in BST;
+          for (Object e : mapTree){
+              first = (Entry<K, V>)e;
+              break;
+          }
+
+      } catch (Exception e){
+          throw new ArrayIndexOutOfBoundsException();
+        }
+      return first;
     }
   
     @Override
     public Entry<K,V> lastEntry(){
-        // Left as an exercise
-        if(true) throw new UnsupportedOperationException("unimplemented method ");
-      return new MyOrderedMap.Entry<K,V>(null,null);
+        Entry<K, V> last = null;
+
+        try{
+
+            // Iterator finds first inorder traversal in BST;
+            for (Object e : mapTree){
+                last = (Entry<K, V>)e;
+            }
+
+        } catch (Exception e){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        return last;
     }
   
     @Override
      public Entry<K,V> ceilingEntry(K key) {
-         // Left as an exercise
-        if(true) throw new UnsupportedOperationException("unimplemented method ");
-         return new MyOrderedMap.Entry<K,V>(null,null);
+        Entry<K, V> current = null;
+
+        try{
+
+            // Iterator finds first inorder traversal in BST;
+            for (Object e : mapTree){
+                current = (Entry<K, V>)e;
+                if (current.key.compareTo(key) >= 0 ) {
+                    return current;
+                }
+            }
+
+        } catch (Exception e){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        return null;
     }
  
     @Override
     public Entry<K,V> floorEntry(K key){
-        // Left as an exercise
-        if(true) throw new UnsupportedOperationException("unimplemented method ");
-        return new MyOrderedMap.Entry<K,V>(null,null);
+        Entry<K, V> current = null;
+        Entry<K, V> last = null;
+
+        try{
+
+            // Iterator finds first inorder traversal in BST;
+            for (Object e : mapTree){
+                current = (Entry<K, V>)e;
+                if (current.key.compareTo(key) > 0 ) {
+                    return last;
+                }
+                last = current;
+            }
+
+        } catch (Exception e){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        return last;
     }
 
     @Override
     public Entry<K,V> lowerEntry(K key){
-        // Left as an exercise
-        if(true) throw new UnsupportedOperationException("unimplemented method ");
-        return new MyOrderedMap.Entry<K,V>(null,null);
+        Entry<K, V> current = null;
+        Entry<K, V> last = null;
+
+        try{
+
+            // Iterator finds first inorder traversal in BST;
+            for (Object e : mapTree){
+                current = (Entry<K, V>)e;
+                if (current.key.compareTo(key) >= 0 ) {
+                    return last;
+                }
+                last = current;
+            }
+
+        } catch (Exception e){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        return null;
     }
     
     @Override
     public Entry<K,V> higherEntry(K key){
-        // Left as an exercise
-        if(true) throw new UnsupportedOperationException("unimplemented method ");
-        return new MyOrderedMap.Entry<K,V>(null,null);
+        Entry<K, V> current = null;
+
+        try{
+
+            // Iterator finds first inorder traversal in BST;
+            for (Object e : mapTree){
+                current = (Entry<K, V>)e;
+                if (current.key.compareTo(key) > 0 ) {
+                    return current;
+                }
+            }
+
+        } catch (Exception e){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        return null;
     }    
     
 class RBTreeMap extends RBTree<Entry<K,V>> {

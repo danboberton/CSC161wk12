@@ -1,5 +1,3 @@
-package demonstrations.Lesson11.edu.frontrange.csc161.a11;
-
 public class BST<E extends Comparable<E>> implements Tree<E> {
   protected TreeNode<E> root;
   protected int size = 0;
