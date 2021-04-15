@@ -111,8 +111,8 @@ public class MyTreeMap<K extends Comparable<K>,V> implements MyOrderedMap<K, V>{
       try{
 
         // Iterator finds first inorder traversal in BST;
-          for (Object e : mapTree){
-              first = (Entry<K, V>)e;
+          for (Entry<K, V> e : mapTree){
+              first = e;
               break;
           }
 
@@ -129,8 +129,8 @@ public class MyTreeMap<K extends Comparable<K>,V> implements MyOrderedMap<K, V>{
         try{
 
             // Iterator finds first inorder traversal in BST;
-            for (Object e : mapTree){
-                last = (Entry<K, V>)e;
+            for (Entry<K, V> e : mapTree){
+                last = e;
             }
 
         } catch (Exception e){
@@ -146,8 +146,8 @@ public class MyTreeMap<K extends Comparable<K>,V> implements MyOrderedMap<K, V>{
         try{
 
             // Iterator finds first inorder traversal in BST;
-            for (Object e : mapTree){
-                current = (Entry<K, V>)e;
+            for (Entry<K, V> e : mapTree){
+                current = e;
                 if (current.key.compareTo(key) >= 0 ) {
                     return current;
                 }
@@ -167,8 +167,8 @@ public class MyTreeMap<K extends Comparable<K>,V> implements MyOrderedMap<K, V>{
         try{
 
             // Iterator finds first inorder traversal in BST;
-            for (Object e : mapTree){
-                current = (Entry<K, V>)e;
+            for (Entry<K, V> e : mapTree){
+                current = e;
                 if (current.key.compareTo(key) > 0 ) {
                     return last;
                 }
@@ -189,8 +189,8 @@ public class MyTreeMap<K extends Comparable<K>,V> implements MyOrderedMap<K, V>{
         try{
 
             // Iterator finds first inorder traversal in BST;
-            for (Object e : mapTree){
-                current = (Entry<K, V>)e;
+            for (Entry<K, V> e : mapTree){
+                current = e;
                 if (current.key.compareTo(key) >= 0 ) {
                     return last;
                 }
@@ -210,8 +210,8 @@ public class MyTreeMap<K extends Comparable<K>,V> implements MyOrderedMap<K, V>{
         try{
 
             // Iterator finds first inorder traversal in BST;
-            for (Object e : mapTree){
-                current = (Entry<K, V>)e;
+            for (Entry<K, V> e : mapTree){
+                current = e;
                 if (current.key.compareTo(key) > 0 ) {
                     return current;
                 }

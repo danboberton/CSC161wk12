@@ -97,7 +97,8 @@ public Entry<K,V> higherEntry(K key);
     public String toString() {
       return "[" + key + ", " + value + "]";
     }
-    
+
+    // How the entry is sorted in BST
     @Override
     public int compareTo(Entry<K,V> o){
         return (this.key).compareTo(o.key);
